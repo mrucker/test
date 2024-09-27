@@ -14,4 +14,8 @@ jobs:
        run: sudo apt install libvips-tools
      - name: resize jpeg images
        run:  vipsthumbnail ./images2/*.jpeg --size 1300x2600 -o $(readlink -f "./new_images/%s.jpeg")
-       
+     - name: Commit
+       run: |
+        git add -A
+        git commit -m "adding resized photos"
+        git push
