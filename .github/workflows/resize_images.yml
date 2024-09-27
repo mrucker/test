@@ -13,5 +13,5 @@ jobs:
      - name: Install ImageMagick
        run: sudo apt install libvips-tools
      - name: resize jpeg images
-       run:  vipsthumbnail ../images2/*.jpeg --size 1300x2600 -o $(readlink -f "./new_images/%s.jpeg")
+       run:  vipsthumbnail ./images2/*.jpeg --size 1300x2600 -o $(readlink -f "./new_images/%s.jpeg")
        
