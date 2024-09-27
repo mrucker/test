@@ -13,10 +13,4 @@ jobs:
      - name: Install ImageMagick
        run: sudo apt-get install imagemagick
      - name: resize jpeg images
-       run:  mogrify -path "./HTC/protocols/MTM/media/resized_images/" "./HTC/protocols/MTM/media/*.jpeg[1300x2600]"
-     - name: Commit
-       run: |
-        git add -A
-        git commit -m "adding resized photos"
-        git push
-       
+       run:  mogrify -path "./new_images/" "./images/*.jpeg[1300x2600]"       
