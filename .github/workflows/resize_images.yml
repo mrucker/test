@@ -13,4 +13,4 @@ jobs:
      - name: Install ImageMagick
        run: sudo apt-get install imagemagick
      - name: resize jpeg images
-       run:  mogrify -path "./new_images/" "./images/*.jpeg[1300x2600]"       
+       run:  mogrify -path "./new_images/" "./images2/*.jpeg[1300x2600]"       
