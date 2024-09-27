@@ -11,6 +11,7 @@ jobs:
      - name: checkout
        uses: actions/checkout@v4
      - name: Install ImageMagick
-       run: sudo apt-get install imagemagick
+       run: sudo apt install libvips-tools
      - name: resize jpeg images
-       run:  mogrify -path "./new_images/" "./images2/*.jpeg[1300x2600]"       
+       run:  vipsthumbnail ../images2/*.jpeg --size 1300x2600 -o $(readlink -f "./new_images/%s.jpeg")
+       
