@@ -1,0 +1,22 @@
+name: Image Resizer Action
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  image_resize_job:
+    name: Image Resize Job
+    runs-on: ubuntu-latest
+    steps:
+     - name: checkout
+       uses: actions/checkout@v4
+     - name: Install ImageMagick
+       run: sudo apt-get install imagemagick
+     - name: resize jpeg images
+       run:  mogrify -path "./HTC/protocols/MTM/media/resized_images/" "./HTC/protocols/MTM/media/*.jpeg[1300x2600]"
+     - name: Commit
+       run: |
+        git add -A
+        git commit -m "adding resized photos"
+        git push
+       
